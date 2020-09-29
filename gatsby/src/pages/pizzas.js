@@ -21,6 +21,13 @@ export const query = graphql`
         name
         id
         price
+        image {
+          asset {
+            fluid(maxWidth: 400) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
         slug {
           current
         }
@@ -32,3 +39,21 @@ export const query = graphql`
     }
   }
 `;
+// export const query = graphql`
+//   query PizzaQuery {
+//     pizzas: allSanityPizza {
+//       nodes {
+//         name
+//         id
+//         price
+//         slug {
+//           current
+//         }
+//         toppings {
+//           id
+//           name
+//         }
+//       }
+//     }
+//   }
+// `;
